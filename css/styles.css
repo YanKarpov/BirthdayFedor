@@ -1,0 +1,77 @@
+html, body {
+  margin: 0; 
+  padding: 0; 
+  overflow: hidden;
+  height: 100%;
+  background: #000014;
+  font-family: sans-serif;
+  color: white;
+  user-select: none;
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  user-select: none;
+  z-index: 0; 
+}
+
+body {
+  cursor: default;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  font-size: 2em;
+  padding: 20px;
+  position: relative;
+  z-index: 10; 
+}
+
+#message {
+  opacity: 0;
+  transition: opacity 0.8s;
+  white-space: pre-wrap;
+  min-height: 1.2em;
+  margin-bottom: 20px;
+  z-index: 20;
+  position: relative;
+}
+
+#message.visible {
+  opacity: 1;
+}
+
+#message.fade-out {
+  opacity: 0;
+}
+
+#choices {
+  display: none;
+  gap: 15px;
+  z-index: 20;
+  position: relative;
+}
+
+#choices button {
+  font-size: 0.6em;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #4a4a7d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  user-select: none;
+  transition: background 0.3s;
+}
+
+#choices button:hover {
+  background: #6769a1;
+}
