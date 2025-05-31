@@ -1,6 +1,7 @@
 const msgEl = document.getElementById('message');
 const choicesEl = document.getElementById('choices');
 
+
 class ScenarioPlayer {
   constructor(scenario) {
     this.scenario = scenario;
@@ -61,19 +62,22 @@ class ScenarioPlayer {
     options.forEach(opt => {
       const btn = document.createElement('button');
       btn.textContent = opt.text;
-      btn.onclick = () => {
+      btn.onclick = async () => {
         choicesEl.style.display = 'none';
         if (opt.next && Array.isArray(opt.next)) {
           this.stack.push({ scenario: this.scenario, currentIndex: this.currentIndex });
           this.scenario = opt.next;
           this.currentIndex = 0;
+          await this.showNode(this.scenario[this.currentIndex]);
+        } else {
+          await this.next();
         }
-        this.next();
       };
       choicesEl.appendChild(btn);
     });
     choicesEl.style.display = 'flex';
   }
+
 
   async showNode(node) {
     choicesEl.style.display = 'none';
