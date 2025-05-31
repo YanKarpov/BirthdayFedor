@@ -123,18 +123,15 @@ function playScenario() {
       msgEl.classList.remove('visible');
       msgEl.classList.add('fade-out');
       setTimeout(() => {
-        // window.location.href = 'main.html';
       }, 800);
     }
     return;
   }
 
   showNode(scenario[currentIndex], () => {
-    // ждём клика, не запускаем дальше автоматически
   });
 }
 
-// Загрузка сценария из JSON
 fetch('data/messages.json')
   .then(res => res.json())
   .then(data => {
