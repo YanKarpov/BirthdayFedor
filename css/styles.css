@@ -98,3 +98,27 @@ body {
     padding: 16px 0;
   }
 }
+
+#cat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+  user-select: none;
+  z-index: 15;
+}
+
+#cat-container img {
+  width: 100%;
+  animation: sway 4s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
