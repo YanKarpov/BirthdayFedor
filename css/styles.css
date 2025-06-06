@@ -1,6 +1,6 @@
 html, body {
-  margin: 0; 
-  padding: 0; 
+  margin: 0;
+  padding: 0;
   overflow: hidden;
   height: 100%;
   background: #000014;
@@ -12,12 +12,12 @@ html, body {
 canvas {
   display: block;
   position: fixed;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   user-select: none;
-  z-index: 0; 
+  z-index: 0;
 }
 
 body {
@@ -29,10 +29,13 @@ body {
   justify-content: center;
   height: 100vh;
   text-align: center;
-  font-size: 2em;
-  padding: 20px;
+  font-size: 1.4em;
+  padding: 20px 40px;
   position: relative;
-  z-index: 10; 
+  z-index: 10;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #message {
@@ -43,6 +46,10 @@ body {
   margin-bottom: 20px;
   z-index: 20;
   position: relative;
+  font-size: 1em;
+  max-width: 100%;
+  word-wrap: break-word;
+  padding: 0 10px;
 }
 
 #message.visible {
@@ -58,11 +65,14 @@ body {
   gap: 15px;
   z-index: 20;
   position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 #choices button {
-  font-size: 0.6em;
-  padding: 10px 20px;
+  font-size: 1em;
+  padding: 12px 24px;
   cursor: pointer;
   background: #4a4a7d;
   color: white;
@@ -70,8 +80,27 @@ body {
   border-radius: 6px;
   user-select: none;
   transition: background 0.3s;
+  min-width: 120px;
+  margin: 5px;
 }
 
 #choices button:hover {
   background: #6769a1;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1.2em;
+    padding: 15px 10px;
+  }
+
+  #message {
+    font-size: 1em;
+  }
+
+  #choices button {
+    font-size: 0.9em;
+    min-width: 100%;
+    padding: 14px 0;
+  }
 }
